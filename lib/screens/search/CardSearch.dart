@@ -27,6 +27,7 @@ class CardSearch extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  //title
                   Text(
                     "Yêu anh trai của bạn thân",
                     maxLines: 1,
@@ -36,6 +37,7 @@ class CardSearch extends StatelessWidget {
                       fontSize: 18,
                     ),
                   ),
+                  //excerpt
                   Text(
                     "Tình cờ gặp trong buổi sinh nhật bạn thân",
                     maxLines: 2,
@@ -46,6 +48,7 @@ class CardSearch extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 5),
+                  //auther
                   Text(
                     "Jose Robinhood",
                     style: TextStyle(
@@ -55,48 +58,12 @@ class CardSearch extends StatelessWidget {
                   SizedBox(height: 15),
                   Row(
                     children: [
+                      Expanded(child: Text("")),
+                      //post_at
                       Text(
                         "12/08",
                         style: TextStyle(
                           color: Colors.grey,
-                        ),
-                      ),
-                      Expanded(child: Text("")),
-                      Container(
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.remove_red_eye,
-                              color: Colors.grey,
-                              size: 15,
-                            ),
-                            SizedBox(width: 5),
-                            Text(
-                              "128",
-                              style: TextStyle(
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 10),
-                      Container(
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.favorite,
-                              color: Colors.grey,
-                              size: 15,
-                            ),
-                            SizedBox(width: 5),
-                            Text(
-                              "18",
-                              style: TextStyle(
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ],
                         ),
                       ),
                     ],
@@ -106,29 +73,17 @@ class CardSearch extends StatelessWidget {
             ),
           ),
           Container(
-            alignment: Alignment(1, -1),
             height: 120,
             width: 90,
             decoration: BoxDecoration(
                 color: Colors.pink[50],
                 image: DecorationImage(
                   fit: BoxFit.cover,
+                  //thumbnail
                   image: NetworkImage(
                       "https://i.pinimg.com/236x/30/05/73/3005736019ad76e58a88d1799867c221.jpg"),
                 ),
                 borderRadius: BorderRadius.all(Radius.circular(5))),
-            child: Container(
-              height: 30,
-              width: 30,
-              child: IconButton(
-                onPressed: () {
-                  print("like");
-                },
-                icon: Icon(Icons.favorite_border),
-                color: Colors.white,
-                padding: EdgeInsets.all(0),
-              ),
-            ),
           ),
         ],
       ),

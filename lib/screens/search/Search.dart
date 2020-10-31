@@ -1,7 +1,6 @@
 import 'package:evn_crawl/screens/public/tab_bottom.dart';
 import 'package:evn_crawl/screens/search/CardSearch.dart';
 import 'package:evn_crawl/screens/search/KeywordSearch.dart';
-import 'package:evn_crawl/screens/search/SearchTopic.dart';
 import 'package:flutter/material.dart';
 
 class Search extends StatefulWidget {
@@ -14,33 +13,6 @@ class Search extends StatefulWidget {
 class _SearchState extends State<Search> {
   String search = "";
   bool recommend = false;
-  List<String> topic = [
-    "Tên truyện",
-    "Chủ đề",
-    "Đơn phương",
-    "Tình tay ba",
-    "Tri kỉ",
-  ];
-  List<bool> chooses = [
-    true,
-    false,
-    false,
-    false,
-    false,
-  ];
-
-  // void chooseTopicSearch(int index, bool choose) {
-  //   setState(() {
-  //     for (var i = 0; i < topic.length; i++) {
-  //       chooses[index] = false;
-  //     }
-  //     search = "";
-  //     if (!choose) {
-  //       chooses[index] = true;
-  //       search = topic[index];
-  //     }
-  //   });
-  // }
 
   void pickSearch() {
     setState(() {
@@ -74,7 +46,7 @@ class _SearchState extends State<Search> {
                           width: MediaQuery.of(context).size.width,
                           child: SingleChildScrollView(
                             child: Container(
-                              margin: EdgeInsets.only(top: 101),
+                              margin: EdgeInsets.only(top: 56),
                               padding: EdgeInsets.symmetric(horizontal: 20),
                               child: Column(
                                 children: [
@@ -89,7 +61,7 @@ class _SearchState extends State<Search> {
                         ),
                   Container(
                     alignment: Alignment.center,
-                    height: 101,
+                    height: 56,
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -149,25 +121,6 @@ class _SearchState extends State<Search> {
                               fontSize: 16,
                               color: Colors.black45,
                               fontWeight: FontWeight.normal,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          height: 50,
-                          width: MediaQuery.of(context).size.width,
-                          padding: EdgeInsets.only(left: 20),
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: List.generate(
-                                topic.length,
-                                (index) => SearchTopic(
-                                  name: topic[index],
-                                  choose: chooses[index],
-                                  // callback: chooseTopicSearch,
-                                  index: index,
-                                ),
-                              ),
                             ),
                           ),
                         ),

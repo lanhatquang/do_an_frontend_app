@@ -1,5 +1,9 @@
+import 'package:enhanced_future_builder/enhanced_future_builder.dart';
+import 'package:evn_crawl/models/news.dart';
 import 'package:evn_crawl/screens/home/CardNewStory.dart';
 import 'package:evn_crawl/screens/public/tab_bottom.dart';
+import 'package:evn_crawl/screens/search/Search.dart';
+import 'package:evn_crawl/services/get_news_home.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -10,8 +14,21 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  NewsHomeService futureNews;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    futureNews = NewsHomeService();
+  }
+
   @override
   Widget build(BuildContext context) {
+    // return Scaffold(
+    //   body: EnhancedFutureBuilder(
+    //     future: futureNews.fecthNewsHome(),
+    //     rememberFutureResult: false,
+    //     whenDone: (List<NewsModel> snapshot) {
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -30,43 +47,64 @@ class _HomeState extends State<Home> {
                       width: MediaQuery.of(context).size.width,
                       child: SingleChildScrollView(
                         child: Container(
+                          padding: EdgeInsets.only(bottom: 160),
                           child: Column(
                             children: [
                               CardNewStory(),
                               CardNewStory(),
                               CardNewStory(),
                               CardNewStory(),
-                              SizedBox(height: 150),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    GestureDetector(
+                                      child: Container(
+                                        height: 25,
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 15),
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey,
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(2)),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            "Back",
+                                            style: TextStyle(
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(child: Text("")),
+                                    GestureDetector(
+                                      child: Container(
+                                        height: 25,
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 15),
+                                        decoration: BoxDecoration(
+                                          color: Colors.blue,
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(2)),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            "Next",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       ),
-                      // child: GridView.count(
-                      //   padding: EdgeInsets.only(
-                      //     top: 10,
-                      //     bottom: 150,
-                      //   ),
-                      //   crossAxisCount: 2,
-                      //   childAspectRatio:
-                      //       ((MediaQuery.of(context).size.width - 40) /
-                      //           2 /
-                      //           210),
-                      //   children: List.generate(
-                      //       7,
-                      //       (index) => GestureDetector(
-                      //             onTap: () {
-                      //               Navigator.push(
-                      //                   context,
-                      //                   MaterialPageRoute(
-                      //                       builder: (context) =>
-                      //                           ListNewStories()));
-                      //             },
-                      //             child: CardTopic(
-                      //               url: urls[index],
-                      //               topic: topics[index],
-                      //             ),
-                      //           )),
-                      // ),
                     ),
                   ),
                   Container(
@@ -91,12 +129,12 @@ class _HomeState extends State<Home> {
                             Icons.search,
                             color: Colors.grey,
                           ),
-                          // onPressed: () {
-                          //   Navigator.push(
-                          //       context,
-                          //       MaterialPageRoute(
-                          //           builder: (context) => Search()));
-                          // },
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Search()));
+                          },
                         ),
                       ],
                     ),
@@ -109,5 +147,54 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
+    //     },
+    //     whenError: (error) {
+    //       return Container(
+    //         color: Colors.grey[300],
+    //         child: Center(
+    //           child: Column(
+    //             mainAxisAlignment: MainAxisAlignment.center,
+    //             crossAxisAlignment: CrossAxisAlignment.center,
+    //             children: <Widget>[
+    //               Icon(
+    //                 Icons.cloud_off,
+    //                 color: Colors.black45,
+    //                 size: 80,
+    //               ),
+    //               Text(
+    //                 "Something Went Wrong",
+    //                 style: TextStyle(
+    //                   color: Colors.black,
+    //                   fontSize: 18,
+    //                   fontWeight: FontWeight.w600,
+    //                 ),
+    //               ),
+    //               Container(
+    //                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+    //                 child: Text(
+    //                   "News Is Unavailable. A system error or your intenet connection might be preventing tutorial from loading. Please refresh the page and try again.",
+    //                   style: TextStyle(
+    //                     color: Colors.grey,
+    //                     fontSize: 14,
+    //                   ),
+    //                   textAlign: TextAlign.center,
+    //                 ),
+    //               ),
+    //             ],
+    //           ),
+    //         ),
+    //       );
+    //     },
+    //     whenNotDone: Center(
+    //       child: Container(
+    //         height: 25,
+    //         width: 25,
+    //         child: CircularProgressIndicator(
+    //           strokeWidth: 1.5,
+    //         ),
+    //       ),
+    //     ),
+    //   ),
+    // );
   }
 }

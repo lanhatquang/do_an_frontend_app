@@ -1,12 +1,14 @@
+import 'package:evn_crawl/models/news.dart';
 import 'package:flutter/material.dart';
 
 class CardNewStory extends StatelessWidget {
-  const CardNewStory({Key key}) : super(key: key);
+  final NewsModel news;
+  CardNewStory({this.news});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 260,
+      height: 320,
       margin: EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -28,6 +30,7 @@ class CardNewStory extends StatelessWidget {
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
+                //thumbnail
                 image: DecorationImage(
                   image: NetworkImage(
                       "https://i.pinimg.com/236x/99/ec/40/99ec40218395c6d7528dd2481f27fa45.jpg"),
@@ -38,6 +41,7 @@ class CardNewStory extends StatelessWidget {
             margin: EdgeInsets.only(top: 10),
             alignment: Alignment.centerLeft,
             padding: EdgeInsets.symmetric(horizontal: 10),
+            //title
             child: Text(
               "Tình cờ gặp trong buổi sinh nhật bạn thân rồi say ánh mắt của anh.",
               maxLines: 2,
@@ -50,10 +54,26 @@ class CardNewStory extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(top: 10),
             alignment: Alignment.centerLeft,
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            //excerpt
+            child: Text(
+              "Tình cờ gặp trong buổi sinh nhật bạn thân rồi say ánh mắt của anh. sds sd sd sd sd sssdsdsdd ssssdsd ssdd sssd ddddss wwew sdsd ssdd",
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: 13,
+              ),
+            ),
+          ),
+          Expanded(child: Text("")),
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            alignment: Alignment.centerLeft,
             width: MediaQuery.of(context).size.width - 40,
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               children: [
+                //auther
                 Text(
                   "Jose Robinhood",
                   style: TextStyle(
@@ -67,6 +87,7 @@ class CardNewStory extends StatelessWidget {
                   color: Colors.grey,
                 ),
                 SizedBox(width: 10),
+                //post_at
                 Text(
                   "#ddd",
                   style: TextStyle(
@@ -87,7 +108,7 @@ class CardNewStory extends StatelessWidget {
                   child: Container(
                     height: 25,
                     padding: EdgeInsets.symmetric(horizontal: 15),
-                    margin: EdgeInsets.only(right: 5),
+                    margin: EdgeInsets.only(right: 5, bottom: 5),
                     decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.all(Radius.circular(2)),
@@ -100,44 +121,6 @@ class CardNewStory extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
-                ),
-                Expanded(child: Text("")),
-                Container(
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.remove_red_eye,
-                        color: Colors.grey,
-                        size: 15,
-                      ),
-                      SizedBox(width: 5),
-                      Text(
-                        "128",
-                        style: TextStyle(
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(width: 10),
-                Container(
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.favorite,
-                        color: Colors.grey,
-                        size: 15,
-                      ),
-                      SizedBox(width: 5),
-                      Text(
-                        "18",
-                        style: TextStyle(
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
                   ),
                 ),
               ],

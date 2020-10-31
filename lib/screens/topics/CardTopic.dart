@@ -43,12 +43,17 @@ class CardTopic extends StatelessWidget {
               width: (MediaQuery.of(context).size.width - 50) / 2,
               height: 160,
             ),
-            Text(
-              topic,
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w600,
-                fontSize: 20,
+            Container(
+              height: 50,
+              alignment: Alignment.center,
+              child: Text(
+                topic,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 20,
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
           ],
