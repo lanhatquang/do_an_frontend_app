@@ -32,8 +32,7 @@ class CardNewStory extends StatelessWidget {
                 ),
                 //thumbnail
                 image: DecorationImage(
-                  image: NetworkImage(
-                      "https://i.pinimg.com/236x/99/ec/40/99ec40218395c6d7528dd2481f27fa45.jpg"),
+                  image: NetworkImage(news.thumbnail),
                   fit: BoxFit.cover,
                 )),
           ),
@@ -43,7 +42,7 @@ class CardNewStory extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 10),
             //title
             child: Text(
-              "Tình cờ gặp trong buổi sinh nhật bạn thân rồi say ánh mắt của anh.",
+              news.title,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
@@ -57,7 +56,7 @@ class CardNewStory extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 10),
             //excerpt
             child: Text(
-              "Tình cờ gặp trong buổi sinh nhật bạn thân rồi say ánh mắt của anh. sds sd sd sd sd sssdsdsdd ssssdsd ssdd sssd ddddss wwew sdsd ssdd",
+              news.excerpt,
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
@@ -75,7 +74,7 @@ class CardNewStory extends StatelessWidget {
               children: [
                 //auther
                 Text(
-                  "Jose Robinhood",
+                  news.auther,
                   style: TextStyle(
                     color: Colors.grey,
                   ),
@@ -89,7 +88,10 @@ class CardNewStory extends StatelessWidget {
                 SizedBox(width: 10),
                 //post_at
                 Text(
-                  "#ddd",
+                  (new DateTime.fromMillisecondsSinceEpoch(
+                          int.parse(news.post_at) * 1000))
+                      .toString()
+                      .split(" ")[0],
                   style: TextStyle(
                     color: Colors.grey,
                   ),

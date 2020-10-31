@@ -1,3 +1,4 @@
+import 'package:evn_crawl/screens/news_topic/NewsTopic.dart';
 import 'package:evn_crawl/screens/public/tab_bottom.dart';
 import 'package:evn_crawl/screens/search/Search.dart';
 import 'package:evn_crawl/screens/topics/CardTopic.dart';
@@ -61,6 +62,15 @@ class _TopicsState extends State<Topics> {
                         children: List.generate(
                             7,
                             (index) => GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => NewsTopic(
+                                                  id: index + 1,
+                                                  topic: topics[index],
+                                                )));
+                                  },
                                   child: CardTopic(
                                     url: urls[index],
                                     topic: topics[index],
