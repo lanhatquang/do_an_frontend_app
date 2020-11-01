@@ -70,33 +70,36 @@ class CardNewStory extends StatelessWidget {
             alignment: Alignment.centerLeft,
             width: MediaQuery.of(context).size.width - 40,
             padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Row(
-              children: [
-                //auther
-                Text(
-                  news.auther,
-                  style: TextStyle(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  //auther
+                  Text(
+                    news.auther,
+                    style: TextStyle(
+                      color: Colors.grey,
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Container(
+                    width: 1,
+                    height: 15,
                     color: Colors.grey,
                   ),
-                ),
-                SizedBox(width: 10),
-                Container(
-                  width: 1,
-                  height: 15,
-                  color: Colors.grey,
-                ),
-                SizedBox(width: 10),
-                //post_at
-                Text(
-                  (new DateTime.fromMillisecondsSinceEpoch(
-                          int.parse(news.post_at) * 1000))
-                      .toString()
-                      .split(" ")[0],
-                  style: TextStyle(
-                    color: Colors.grey,
+                  SizedBox(width: 10),
+                  //post_at
+                  Text(
+                    (new DateTime.fromMillisecondsSinceEpoch(
+                            int.parse(news.post_at) * 1000))
+                        .toString()
+                        .split(" ")[0],
+                    style: TextStyle(
+                      color: Colors.grey,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Container(

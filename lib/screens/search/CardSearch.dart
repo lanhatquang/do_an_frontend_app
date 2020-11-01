@@ -1,7 +1,9 @@
+import 'package:evn_crawl/models/news.dart';
 import 'package:flutter/material.dart';
 
 class CardSearch extends StatelessWidget {
-  const CardSearch({Key key}) : super(key: key);
+  final NewsModel news;
+  CardSearch({this.news});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class CardSearch extends StatelessWidget {
                 children: [
                   //title
                   Text(
-                    "Yêu anh trai của bạn thân",
+                    news.title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -39,7 +41,7 @@ class CardSearch extends StatelessWidget {
                   ),
                   //excerpt
                   Text(
-                    "Tình cờ gặp trong buổi sinh nhật bạn thân",
+                    news.excerpt,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -50,7 +52,7 @@ class CardSearch extends StatelessWidget {
                   SizedBox(height: 5),
                   //auther
                   Text(
-                    "Jose Robinhood",
+                    news.auther,
                     style: TextStyle(
                       color: Colors.grey,
                     ),
@@ -61,7 +63,10 @@ class CardSearch extends StatelessWidget {
                       Expanded(child: Text("")),
                       //post_at
                       Text(
-                        "12/08",
+                        (new DateTime.fromMillisecondsSinceEpoch(
+                                int.parse(news.post_at) * 1000))
+                            .toString()
+                            .split(" ")[0],
                         style: TextStyle(
                           color: Colors.grey,
                         ),
@@ -80,8 +85,7 @@ class CardSearch extends StatelessWidget {
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   //thumbnail
-                  image: NetworkImage(
-                      "https://i.pinimg.com/236x/30/05/73/3005736019ad76e58a88d1799867c221.jpg"),
+                  image: NetworkImage(news.thumbnail),
                 ),
                 borderRadius: BorderRadius.all(Radius.circular(5))),
           ),

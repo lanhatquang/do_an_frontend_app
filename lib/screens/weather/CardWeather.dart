@@ -1,7 +1,9 @@
+import 'package:evn_crawl/models/weather_item.dart';
 import 'package:flutter/material.dart';
 
 class CardWeather extends StatelessWidget {
-  const CardWeather({Key key}) : super(key: key);
+  final WeatherItem item;
+  CardWeather({this.item});
 
   @override
   Widget build(BuildContext context) {

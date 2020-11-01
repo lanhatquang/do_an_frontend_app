@@ -6,7 +6,7 @@ class NewsTopicService {
   http.Client httpClient = http.Client();
 
   Future<List<NewsModel>> fecthNewsTopic(int count, int id) async {
-    final domain = "http://192.168.1.15:8000/api";
+    final domain = "http://192.168.1.28:8000/api";
     final String baseUrl = "$domain/news/topic/$id?start=$count&limit=10";
     var response;
     try {
@@ -33,6 +33,7 @@ class NewsTopicService {
       }
     } catch (e) {
       print("$e");
+      throw Exception('error fetching profile');
     }
   }
 }
