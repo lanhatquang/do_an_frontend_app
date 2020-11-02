@@ -13,7 +13,6 @@ class TabBottom extends StatelessWidget {
       IconData icon, int choose, BuildContext context, Widget render) {
     return GestureDetector(
       onTap: () {
-        print(choose);
         if (this.screen != 0) {
           Navigator.pop(context);
         }
@@ -64,7 +63,6 @@ class TabBottom extends StatelessWidget {
         ),
       ),
       onTap: () {
-        print("Home");
         if (this.screen != 0) {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => Home()));

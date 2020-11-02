@@ -22,7 +22,6 @@ class _NewsTopicState extends State<NewsTopic> {
   int count = 0;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     futureNews = NewsTopicService();
   }

@@ -4,7 +4,6 @@ import 'package:evn_crawl/screens/search/CardSearch.dart';
 import 'package:evn_crawl/screens/search/searching.dart';
 import 'package:evn_crawl/services/get_news_search.dart';
 import 'package:flutter/material.dart';
-import 'dart:convert' as convert;
 
 class Search extends StatefulWidget {
   Search({Key key}) : super(key: key);
@@ -27,25 +26,16 @@ class _SearchState extends State<Search> {
   }
 
   void callbackSearch(String search) {
-    print("searching...");
     setState(() {
       isSearch = true;
       searching = search;
       futureSearch = NewsSearchService().fecthNewsSearch(search);
-      print("vao day 1");
     });
   }
 
   void callbackPickSearch() {
     setState(() {
       isSearch = false;
-    });
-  }
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-      futureSearch = NewsSearchService().fecthNewsSearch(searching);
     });
   }
 
@@ -83,7 +73,6 @@ class _SearchState extends State<Search> {
                               );
                             },
                             whenError: (error) {
-                              print("$error");
                               return Container(
                                 margin: EdgeInsets.only(right: 10),
                                 child: Center(

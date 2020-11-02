@@ -1,4 +1,5 @@
 import 'package:evn_crawl/models/news.dart';
+import 'package:evn_crawl/screens/news_details/NewsDetails.dart';
 import 'package:flutter/material.dart';
 
 class CardNewStory extends StatelessWidget {
@@ -110,6 +111,12 @@ class CardNewStory extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => NewsDetails(news: news)));
+                  },
                   child: Container(
                     height: 25,
                     padding: EdgeInsets.symmetric(horizontal: 15),

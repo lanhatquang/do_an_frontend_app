@@ -1,21 +1,23 @@
-import 'package:evn_crawl/models/news.dart';
-import 'package:evn_crawl/screens/news_details/NewsDetails.dart';
+import 'package:evn_crawl/models/forecast.dart';
+import 'package:evn_crawl/screens/forecost_details/ForecostDetails.dart';
 import 'package:flutter/material.dart';
 
-class CardSearch extends StatelessWidget {
-  final NewsModel news;
-  CardSearch({this.news});
+class CardForecast extends StatelessWidget {
+  final ForecastModel forecast;
+  CardForecast({this.forecast});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => NewsDetails(news: news)));
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ForecostDetails(forecast: forecast)));
       },
       child: Container(
         height: 160,
-        padding: EdgeInsets.symmetric(vertical: 15),
+        padding: EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(
@@ -37,40 +39,22 @@ class CardSearch extends StatelessWidget {
                   children: [
                     //title
                     Text(
-                      news.title,
-                      maxLines: 1,
+                      forecast.title,
+                      maxLines: 4,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                        fontSize: 15,
                       ),
                     ),
-                    //excerpt
-                    Text(
-                      news.excerpt,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.grey,
-                      ),
-                    ),
-                    SizedBox(height: 5),
-                    //auther
-                    Text(
-                      news.auther,
-                      style: TextStyle(
-                        color: Colors.grey,
-                      ),
-                    ),
-                    SizedBox(height: 15),
+                    Expanded(child: Text("")),
                     Row(
                       children: [
                         Expanded(child: Text("")),
                         //post_at
                         Text(
                           (new DateTime.fromMillisecondsSinceEpoch(
-                                  int.parse(news.post_at) * 1000))
+                                  int.parse(forecast.post_at) * 1000))
                               .toString()
                               .split(" ")[0],
                           style: TextStyle(
@@ -91,7 +75,7 @@ class CardSearch extends StatelessWidget {
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     //thumbnail
-                    image: NetworkImage(news.thumbnail),
+                    image: NetworkImage(forecast.thumbnail),
                   ),
                   borderRadius: BorderRadius.all(Radius.circular(5))),
             ),

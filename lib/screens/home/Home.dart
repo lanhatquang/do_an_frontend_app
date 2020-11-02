@@ -17,7 +17,6 @@ class _HomeState extends State<Home> {
   int count = 0;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     futureNews = NewsHomeService();
   }

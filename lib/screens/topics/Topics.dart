@@ -88,10 +88,11 @@ class _TopicsState extends State<Topics> {
                     child: Row(
                       children: [
                         Text(
-                          "Topics",
+                          "TOPICS",
                           style: TextStyle(
                             fontSize: 25,
                             fontWeight: FontWeight.w600,
+                            color: Colors.blue[400],
                           ),
                         ),
                         Expanded(child: Text("")),

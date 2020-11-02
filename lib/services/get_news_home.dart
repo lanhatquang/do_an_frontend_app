@@ -1,12 +1,13 @@
 import 'dart:convert';
 import 'package:evn_crawl/models/news.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 class NewsHomeService {
   http.Client httpClient = http.Client();
 
   Future<List<NewsModel>> fecthNewsHome(int count) async {
-    final domain = "http://192.168.1.28:8000/api";
+    final domain = DotEnv().env['API'];
     final String baseUrl = "$domain/news?start=$count&limit=10";
     var response;
     try {

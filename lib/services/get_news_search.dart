@@ -1,12 +1,13 @@
 import 'dart:convert';
 import 'package:evn_crawl/models/news.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 class NewsSearchService {
   http.Client httpClient = http.Client();
 
   Future<List<NewsModel>> fecthNewsSearch(String key) async {
-    final domain = "http://192.168.1.28:8000/api";
+    final domain = DotEnv().env['API'];
     final String baseUrl = "$domain/news/search?searchKey=$key";
     var response;
     try {

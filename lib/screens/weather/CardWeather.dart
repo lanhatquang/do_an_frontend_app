@@ -8,8 +8,7 @@ class CardWeather extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 200,
-      padding: EdgeInsets.symmetric(vertical: 15),
+      padding: EdgeInsets.symmetric(vertical: 10),
       child: Column(
         children: [
           Container(
@@ -19,19 +18,39 @@ class CardWeather extends StatelessWidget {
                 Container(
                   width: 120,
                   height: 120,
-                  color: Colors.blue,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                    image: NetworkImage(item.icon.trim()),
+                    fit: BoxFit.cover,
+                  )),
                 ),
                 Container(
                   height: 160,
+                  alignment: Alignment.topLeft,
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                   width: MediaQuery.of(context).size.width - 160,
-                  color: Colors.green,
+                  color: Colors.grey[300],
+                  child: Column(
+                    children: [
+                      Text(
+                        item.area.trim().toUpperCase(),
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text(item.inf_2.trim()),
+                      SizedBox(height: 5),
+                      Text(item.inf_3.trim()),
+                    ],
+                  ),
                 ),
               ],
             ),
           ),
           Container(
-            child: Text(
-                "asasasa sasasasa sasasasasas asasasasasas asasasaasaas asasasasas aasasasa sssssss ssssssssss ssssssss ssssss ssssss"),
+            child: Text(item.inf_1.trim()),
           ),
         ],
       ),

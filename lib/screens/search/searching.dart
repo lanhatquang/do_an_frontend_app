@@ -70,7 +70,6 @@ class _SearchingState extends State<Searching> {
               future: futureRemember,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
-                  print("data:${snapshot.data}");
                   return Stack(
                     children: <Widget>[
                       (recommend)
