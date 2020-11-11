@@ -12,7 +12,6 @@ class CardWeather extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 160,
             child: Row(
               children: [
                 Container(
@@ -25,7 +24,6 @@ class CardWeather extends StatelessWidget {
                   )),
                 ),
                 Container(
-                  height: 160,
                   alignment: Alignment.topLeft,
                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                   width: MediaQuery.of(context).size.width - 160,

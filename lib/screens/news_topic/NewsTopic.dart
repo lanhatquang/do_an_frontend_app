@@ -134,12 +134,18 @@ class _NewsTopicState extends State<NewsTopic> {
                         color: Colors.white,
                         child: Row(
                           children: [
-                            Text(
-                              widget.topic.toUpperCase(),
-                              style: TextStyle(
-                                fontSize: 23,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.blue[400],
+                            Container(
+                              width: MediaQuery.of(context).size.width - 90,
+                              child: SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Text(
+                                  widget.topic.toUpperCase(),
+                                  style: TextStyle(
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.blue[400],
+                                  ),
+                                ),
                               ),
                             ),
                             Expanded(child: Text("")),

@@ -13,13 +13,13 @@ class Topics extends StatefulWidget {
 
 class _TopicsState extends State<Topics> {
   final List urls = [
-    "http://icon.com.vn/DesktopModules/ePowerPortal_CMS/FrontEnd/Thumbnail.aspx?IP=//Portals/0/userfiles/vanht/files/QI_2017/sc3.jpg&IW=130",
-    "http://icon.com.vn/DesktopModules/ePowerPortal_CMS/FrontEnd/Thumbnail.aspx?IP=//Portals/0/userfiles/vanht/images/VANHT/T8/T10/tp.jpg&IW=130",
-    "http://icon.com.vn/DesktopModules/ePowerPortal_CMS/FrontEnd/Thumbnail.aspx?IP=//Portals/0/userfiles/anhptl/files/0_012_7130.jpg&IW=130",
-    "http://icon.com.vn/DesktopModules/ePowerPortal_CMS/FrontEnd/Thumbnail.aspx?IP=//Portals/0/userfiles/anhptl/files/0_012_7064.jpg&IW=130",
-    "http://icon.com.vn/DesktopModules/ePowerPortal_CMS/FrontEnd/Thumbnail.aspx?IP=//Portals/0/userfiles/anhptl/files/0_017_28_12_18.jpg&IW=130",
-    "http://icon.com.vn/DesktopModules/ePowerPortal_CMS/FrontEnd/Thumbnail.aspx?IP=//Portals/0/userfiles/vanht/files/2019/4129_IMG_0148.jpg&IW=130",
-    "http://icon.com.vn/DesktopModules/ePowerPortal_CMS/FrontEnd/Thumbnail.aspx?IP=//Portals/0/userfiles/anhptl/files/0_012_8019.jpg&IW=130",
+    "https://img.timviecdientu.com/2019/08/trien-vong-nganh-dien-tu-vien-thong-4.jpg",
+    "https://image.sggp.org.vn/w840/Uploaded/2020/evofjasfzyr/2019_12_09/1_7_obgt.gif",
+    "https://lh3.googleusercontent.com/proxy/bx0LgCEZU_i84KUVEEJEpGPxj6myNNjTfXd3ChALN46h1opw0Kpzhk0mFwoKP65AjjMnRLdHdQtwYOR1r05aYQbH3xvPnnZk5NiGgS0FQj_GPOnglKq8M7ACoh9Y",
+    "https://lh3.googleusercontent.com/proxy/fT8LGPUQpRdVFe55HafktDaGu2DX6_gDoN_Z35_oCcF1X8b2pUvttvYa76LEbsmDTVeJeE0SDh0zFzP34yLgjw5PVaGBt-VMIcClISZ8CdH0yeMRWCrII1TWaFpd5R5NOnuEmg-Obkf-s_bz_nknycEmyOiFcdXVxNwueKY_ySedB2cOB9IbqgwJ33h5INw9s1QBlFCCVAZrUbfnNYd4sizmoVVYorfA10jeYt9RGrhpP8-ZPpnLAuo3w-OYJ5Drq3ABdT_01LD1StmXytnM_uCDXEBya1Pxzb5p9N-mLIxLwLjdSkP6Z4Y",
+    "https://tuyensinh.hueic.edu.vn/wp-content/uploads/2017/03/dich-vu-bao-tri-bao-duong-he-thong-dien-cong-nghiep.jpg",
+    "https://lh3.googleusercontent.com/proxy/JxRvO_6wLa1m22S3rRDEUSRjrXHXc9LoI_tRxz7mJNjb6u6clLcMu13OaVaVLSSBkPIsVHhdmJwVx_zR8qz-B-cJNdBoeWt4IatakORCcUw2mRm32n43yhejJ_e_JfZ11vLhLffIOffcO5BZAIg8VrywJLg",
+    "https://lh3.googleusercontent.com/proxy/u9V_UR5Dh6tkUhVdFB840mKNwKv6lZiACB8SZL07a7vRijtUVJuZVk-JWr0WSPcxwocsaArNwEgjBEvPT0ho-5Idb1vnxPbvjUyqVcK50o7LROC4VQ5su4q8wp40awyxbnvA9hWACKsOJcaiP6Srn2Jp7M-eoBdCow",
   ];
   final List topics = [
     "Tin tức",

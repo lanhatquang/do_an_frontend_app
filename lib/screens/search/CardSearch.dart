@@ -59,6 +59,8 @@ class CardSearch extends StatelessWidget {
                     //auther
                     Text(
                       news.auther,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         color: Colors.grey,
                       ),
