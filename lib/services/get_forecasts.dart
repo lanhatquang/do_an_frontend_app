@@ -8,7 +8,7 @@ class ForecastsService {
 
   Future<List<ForecastModel>> fecthForecasts(int count) async {
     final domain = DotEnv().env['API'];
-    final String baseUrl = "$domain/forecast?start=$count&limit=10";
+    final String baseUrl = "$domain/weather/forecast?start=$count&limit=10";
     var response;
     try {
       response = await httpClient.get(baseUrl);

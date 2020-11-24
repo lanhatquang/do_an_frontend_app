@@ -49,7 +49,7 @@ class TabBottom extends StatelessWidget {
                 child: CircleAvatar(
                   radius: 30,
                   backgroundImage: NetworkImage(
-                      "https://lh3.googleusercontent.com/proxy/sgisCVRcojXxtZYsqAPPuSj3SzKNQ_qYmGNG71POQANkHoRElzjNqEfR7UXEmmIMnuQxtabBf7sSbzWGk0GKniYYJUjZ0JgDWfEjMA"),
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSACrInOF5terJ2xxR9TUtTyJdCxZd9XpLHWinoEJD-JAoAkJRZ_Lf4AFzYp5bU1uSTvVeTG8rRPar8HSu45uUMrx18CoESko0&usqp=CAU&ec=45730947"),
                 ),
               ),
             ),
