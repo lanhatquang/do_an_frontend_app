@@ -62,7 +62,10 @@ class _ForecostDetailsState extends State<ForecostDetails> {
                         margin: EdgeInsets.symmetric(horizontal: 20),
                       ),
                       SizedBox(height: 20),
-                      Text(widget.forecast.content),
+                      Text(
+                        widget.forecast.content.trim(),
+                        textAlign: TextAlign.justify,
+                      ),
                       SizedBox(height: 20),
                     ],
                   ),

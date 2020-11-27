@@ -58,8 +58,23 @@ class _HomeState extends State<Home> {
                           child: SingleChildScrollView(
                             child: Container(
                               padding: EdgeInsets.only(bottom: 160),
+                              alignment: Alignment.centerLeft,
                               child: Column(
                                 children: [
+                                  SizedBox(height: 15),
+                                  Container(
+                                    alignment: Alignment.centerLeft,
+                                    padding: EdgeInsets.only(left: 10),
+                                    child: Text(
+                                      "NÓNG 24H",
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.grey[700],
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 15),
                                   Column(
                                     children: snapshot
                                         .map((e) => CardNewStory(news: e))

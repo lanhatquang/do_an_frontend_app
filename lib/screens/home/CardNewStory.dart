@@ -8,137 +8,81 @@ class CardNewStory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 320,
-      margin: EdgeInsets.only(bottom: 15),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-        boxShadow: [
-          BoxShadow(
-              color: Color(0xffA22447).withOpacity(.05),
-              offset: Offset(0, 0),
-              blurRadius: 20,
-              spreadRadius: 3)
-        ],
-      ),
-      child: Column(
-        children: [
-          Container(
-            height: 150,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10),
-                  topRight: Radius.circular(10),
-                ),
-                //thumbnail
-                image: DecorationImage(
-                  image: NetworkImage(news.thumbnail),
-                  fit: BoxFit.cover,
-                )),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 10),
-            alignment: Alignment.centerLeft,
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            //title
-            child: Text(
-              news.title,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontSize: 15,
-              ),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => NewsDetails(news: news)));
+      },
+      child: Container(
+        height: 90,
+        width: MediaQuery.of(context).size.width - 40,
+        margin: EdgeInsets.only(bottom: 15),
+        padding: EdgeInsets.only(left: 5),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(2)),
+          boxShadow: [
+            BoxShadow(
+                color: Color(0xffA22447).withOpacity(.05),
+                offset: Offset(0, 0),
+                blurRadius: 20,
+                spreadRadius: 3)
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              height: 80,
+              width: 105,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(news.thumbnail),
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(2)),
             ),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 10),
-            alignment: Alignment.centerLeft,
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            //excerpt
-            child: Text(
-              news.excerpt,
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontSize: 13,
-              ),
-            ),
-          ),
-          Expanded(child: Text("")),
-          Container(
-            margin: EdgeInsets.only(top: 10),
-            alignment: Alignment.centerLeft,
-            width: MediaQuery.of(context).size.width - 40,
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
+            Container(
+              width: MediaQuery.of(context).size.width - 150,
+              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  //auther
                   Text(
-                    news.auther,
+                    news.title.trim(),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                      color: Colors.grey,
+                      fontSize: 15,
                     ),
                   ),
-                  SizedBox(width: 10),
-                  Container(
-                    width: 1,
-                    height: 15,
-                    color: Colors.grey,
-                  ),
-                  SizedBox(width: 10),
-                  //post_at
+                  Expanded(child: Text("")),
                   Text(
-                    (new DateTime.fromMillisecondsSinceEpoch(
-                            int.parse(news.post_at) * 1000))
-                        .toString()
-                        .split(" ")[0],
+                    news.auther,
+                    maxLines: 2,
                     style: TextStyle(
                       color: Colors.grey,
+                      fontSize: 12,
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      (new DateTime.fromMillisecondsSinceEpoch(
+                              int.parse(news.post_at) * 1000))
+                          .toString()
+                          .split(" ")[0],
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 12,
+                      ),
+                      maxLines: 2,
                     ),
                   ),
                 ],
               ),
             ),
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 10),
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            alignment: Alignment.centerRight,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => NewsDetails(news: news)));
-                  },
-                  child: Container(
-                    height: 25,
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    margin: EdgeInsets.only(right: 5, bottom: 5),
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.all(Radius.circular(2)),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Read now",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

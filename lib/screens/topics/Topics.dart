@@ -15,7 +15,7 @@ class _TopicsState extends State<Topics> {
   final List urls = [
     "https://img.timviecdientu.com/2019/08/trien-vong-nganh-dien-tu-vien-thong-4.jpg",
     "https://image.sggp.org.vn/w840/Uploaded/2020/evofjasfzyr/2019_12_09/1_7_obgt.gif",
-    "https://lh3.googleusercontent.com/proxy/_FJP3uS7HQ8dzYBKrOGuJWJgKekEJpmk2B0GHRTFBWMxdEwxgFzgOTlB4SGzE43DhO77BS1Mmr3VvcgsatUzE_3iVfT_CHlywBfJVk8gcsgZ3fWnmCN5QCF6u_TWZL1YP9K__wBNhPZFdtreMKvcUx8czPo",
+    "https://img.timvieckinhdoanh.com/2019/08/Kinh-doanh-san-xuat-la-gi-thumb.jpg",
     "https://www.pvpower.vn/wp-content/uploads/2017/05/nhontrach2.jpg",
     "https://tuyensinh.hueic.edu.vn/wp-content/uploads/2017/03/dich-vu-bao-tri-bao-duong-he-thong-dien-cong-nghiep.jpg",
     "https://hanoimoi.com.vn/Uploads/images/phananh/2020/07/02/dien.jpg",
