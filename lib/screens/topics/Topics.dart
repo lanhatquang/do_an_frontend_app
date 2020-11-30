@@ -17,7 +17,7 @@ class _TopicsState extends State<Topics> {
     "https://image.sggp.org.vn/w840/Uploaded/2020/evofjasfzyr/2019_12_09/1_7_obgt.gif",
     "https://img.timvieckinhdoanh.com/2019/08/Kinh-doanh-san-xuat-la-gi-thumb.jpg",
     "https://www.pvpower.vn/wp-content/uploads/2017/05/nhontrach2.jpg",
-    "https://tuyensinh.hueic.edu.vn/wp-content/uploads/2017/03/dich-vu-bao-tri-bao-duong-he-thong-dien-cong-nghiep.jpg",
+    "https://congthuong.vn/stores/news_dataimages/thanhhuong/062018/07/16/95f4c7f8fa7123a27964e35b98dddc46_1f.jpg",
     "https://hanoimoi.com.vn/Uploads/images/phananh/2020/07/02/dien.jpg",
     "https://vnn-imgs-f.vgcloud.vn/2019/12/17/14/dien-luc-viet-nam-65-nam-phuc-vu-nhan-dan.jpg",
   ];
